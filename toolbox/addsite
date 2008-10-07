@@ -1,0 +1,57 @@
+#!/bin/bash
+
+APACHE_SITE="/etc/apache2/sites-available"
+HOSTS_FILE="/etc/hosts"
+WWW_BASE="/home/dcancel/development/sites"
+OS_DIST=`uname -o`
+APACHE_TEMPLATE="
+<VirtualHost *>
+    ServerName $1.local
+    DocumentRoot $WWW_BASE/$1
+</VirtualHost>"
+
+# Check that required args are present
+if [ $# -ne 1 ]; then
+  echo "Usage: `basename $0` {site_name}"
+  exit -1
+fi
+
+# Make sure only root can run our script
+if [[ $USER != "root" ]]; then
+   echo "Error: `basename $0` must be run as root" 1>&2
+   exit -1
+fi
+
+# Check that we're running on Debian or Ubuntu
+if [ $OS_DIST != "GNU/Linux" ]; then
+    echo "Error: `basename $0` only runs on GNU/Linux"
+    echo "  * You appear to be running: $OS_DIST"
+    exit -1
+fi
+
+# Make sure site doesn't already exist
+if [ -e $APACHE_SITE/$1 ]; then
+    echo "Error: It appears that '$1' already exists."
+    exit -1
+fi
+
+echo  "Adding site to /etc/hosts: $1.local"
+echo "127.0.0.1     $1.local" >> $HOSTS_FILE
+
+echo  "Adding the new site to apache: $1"
+
+# Add a new file for the site to sites-available directory
+mkdir -p $WWW_BASE/$1
+echo "<h1>$1 webserver</h1>" > $WWW_BASE/$1/index.html
+echo "$APACHE_TEMPLATE" > $APACHE_SITE/$1
+chown -R dcancel:dcancel $WWW_BASE/$1
+
+# Enable site
+a2ensite $1
+
+# Restart Apache
+/etc/init.d/apache2 force-reload
+
+echo "**********************************"
+echo "Visit your new site at: $1.local"
+echo "**********************************"
