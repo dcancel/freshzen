@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check that required args are present
+if [ $# -ne 1 ]; then
+  echo "Usage: `basename $0` {path}"
+  exit -1
+fi
+
+FIND_CMD="find $1 -name "*.php" -print"
+GREP_CMD="grep --line-number -E 'strlen\(|split\(mail\(|strpos\(|strrpos\(|substr\(|strtolower\(|strtoupper\(|substr_count\(|ereg\(|eregi\(|ereg_replace\(|eregi_replace\('"
+
+echo "--------------------------------------------------------------------------------"
+echo "Searching for non-UTF-8 compliant PHP code"
+echo "--------------------------------------------------------------------------------"
+
+$FIND_CMD | xargs $GREP_CMD
