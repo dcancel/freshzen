@@ -1,0 +1,282 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Basics and Typography */
+
+body {
+	font-size: 10px; 
+	color: #000; 
+	line-height: 1.5em; 
+	margin: 0px; 
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	background: #fff;
+}
+
+p {
+	font-size: 15px;
+	line-height:23px;
+	margin: 0 0 10px 0;
+}
+.siteInfo p {
+	font-size: 13px;
+}
+ol, ul {
+	font-size: 15px;
+	line-height: 23px;
+	margin: 10px 0 10px 20px;
+}
+hr {
+	border:none;
+	height:1px;
+	border-top: 1px solid #ccc;
+	clear:both;
+}
+h1, h2, h3, h4,h5, #title .product { 
+  font-family: "Trebuchet MS", Trebuchet, Verdana, sans-serif; 
+}
+h1 {
+	font-size: 30px;
+	letter-spacing:-1px;
+	line-height: 33px;
+}
+h1.siteName {
+	font-size: 30px;
+	letter-spacing:-1px;
+	line-height: 33px;
+	float:left;
+	background:#fff;
+	padding: 0 15px 0 0;
+}
+.product {
+	float:left;
+	font-size:16px;
+	color:#555555;
+	line-height:16px;
+	font-weight:bold;
+	padding-top: 5px;
+}
+h2 {
+	font-size: 18px;
+	line-height:23px;
+}
+
+h3 {
+	font-size:16px;
+	color:#555555;
+	line-height:18px;
+}
+
+h4 {
+	font-size: 16px;
+	line-height:18px;
+}
+
+h5 {
+	font-size: 13px;
+	line-height:18px;
+}
+
+.center {
+	text-align:center;
+}
+.callout {
+	background: #FFFF99;
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 10px;
+	font-size: 13px;
+}
+
+.clearer {
+	clear:both;
+}
+
+/* Layout */
+
+#header {
+	border-top: 2px solid #999;
+}
+#title {
+	width: 750px; 
+	margin: 0px auto 10px auto;
+	height: 45px;
+	padding-top: 35px;
+	background:url(media/img/header_line.gif) repeat-x;
+}
+#mainBak {
+	padding-bottom: 40px;
+}
+#container {
+	width: 750px; 
+	margin: 0px auto;
+}
+
+.topContent {
+	width:506px;
+	float:left;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+.sidebar {
+	width:190px;
+	float:right;
+	background: #E8EEFA;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+.top {
+	margin-bottom: 10px;
+}
+
+.siteInfo {
+	border-top: 1px solid #ccc;
+	margin-top: 25px;
+}
+
+/* Product Page */
+#titleProd {
+	width: 960px; 
+	margin: 0px auto 10px auto;
+	height: 45px;
+	padding-top: 35px;
+	background:url(media/img/header_line.gif) repeat-x;
+}
+#productContainer {
+	width: 960px; 
+	margin: 0px auto;
+}
+
+.prodContent {
+	width:716px;
+	float:left;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+
+
+/* Forms */
+#signin ol {
+	margin:10px 0 0 0; padding:0;
+}
+#signin li {
+	list-style: none;
+	padding: 0 0 10px 0;
+	margin:0;
+}
+#signin label {
+	padding: 0; vertical-align: top; font-size: 13px;
+}
+
+#signin input {
+	padding: 3px; width: 160px;
+}
+
+#signin input.checkbox {
+	padding: 3px; width: 20px;
+}
+
+#signin input.submitButton {
+	width: auto;
+}
+
+.button {
+	margin-left: 20px;
+}
+.button a:link, .button a:active, .button a:hover, .button a:visited {
+	text-decoration:none;
+	color: #fff;
+}
+.button a.signup {
+  	display: block;
+  	width: 150px;
+  	height: 30px;
+  	background: #006EC6;
+	text-align:center;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+/* Tabs */
+.ui-tabs-nav, .ui-tabs-panel {
+    font-size: 15px;
+}
+.ui-tabs-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	float:left;
+	border-bottom: 1px solid #ccc;
+}
+.ui-tabs-nav:after { /* clearing without presentational markup, IE gets extra treatment */
+    display: block;
+    clear: both;
+    content: " ";
+}
+.ui-tabs-nav li {
+    margin: 0;
+	width: 180px;
+	border-top: 1px solid #ccc;
+	position:relative;
+	left: 1px;
+	z-index: 2;
+}
+
+.ui-tabs-nav a span {
+	padding: 0 10px;
+}
+.ui-tabs-nav a {
+    white-space: nowrap; /* @ IE 6 */
+    outline: 0; /* @ Firefox, prevent dotted border after click */ 
+	background: url(media/img/tab.gif) top left no-repeat;
+	width: 180px;
+	display:block;
+	text-decoration:none;
+}
+
+.ui-tabs-nav .ui-tabs-selected a {
+	background: url(media/img/tab.gif) 0 -41px no-repeat;
+
+}
+.ui-tabs-nav a span {
+    height: 39px;
+    line-height: 39px;
+
+}
+.ui-tabs-nav .ui-tabs-selected a span {
+    height: 39px;
+    line-height: 39px;
+}
+
+.ui-tabs-nav .ui-tabs-selected a:link, .ui-tabs-nav .ui-tabs-selected a:visited,
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited {
+    cursor: pointer;
+}
+.ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active,
+.ui-tabs-nav .ui-tabs-unselect a:hover, .ui-tabs-nav .ui-tabs-unselect a:focus, .ui-tabs-nav .ui-tabs-unselect a:active {
+    cursor: pointer;
+}
+.ui-tabs-panel {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff; /* declare background color for container to avoid distorted fonts in IE while fading */
+	float:right;
+	width:548px;
+}
+
+.ui-tabs-panel p {
+	font-size: 1em;
+}
+
+/* Additional IE specific bug fixes... */
+* html .ui-tabs-nav { /* auto clear @ IE 6 & IE 7 Quirks Mode */
+    display: inline-block;
+}
+*:first-child+html .ui-tabs-nav  { /* auto clear @ IE 7 Standards Mode - do not group selectors, otherwise IE 6 will ignore complete rule (because of the unknown + combinator)... */
+    display: inline-block;
+}
+.ui-tabs-hide { display: none; }
