@@ -41,8 +41,8 @@ echo "127.0.0.1     $1.local" >> $HOSTS_FILE
 echo  "Adding the new site to apache: $1"
 
 # Add a new file for the site to sites-available directory
-mkdir -p $WWW_BASE/$1
-echo "<h1>$1 webserver</h1>" > $WWW_BASE/$1/index.html
+mkdir -p $WWW_BASE/$1/www
+echo "<h1>$1.local webserver</h1>" > $WWW_BASE/$1/www/index.html
 echo "$APACHE_TEMPLATE" > $APACHE_SITE/$1
 chown -R dcancel:dcancel $WWW_BASE/$1
 
